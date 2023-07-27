@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:09:48 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/26 15:18:44 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/07/27 18:47:08 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@
 
 class PhoneBook {
 
-public:
-  PhoneBook();
-  ~PhoneBook();
-
-  void	add();
-  void	search() const;
-
 private:
 	Contact _contacts[8];
 	int		_contactIdx;
 	int		_nContacts;
 
 	void	_listEntries() const;
-};
 
+public:
+  PhoneBook();
+  ~PhoneBook();
+
+  void	add();
+  void	search() const;
+};
 #endif

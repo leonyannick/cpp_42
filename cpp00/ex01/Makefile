@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+         #
+#    By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/25 15:14:10 by lbaumann          #+#    #+#              #
-#    Updated: 2023/07/26 14:38:28 by lbaumann         ###   ########.fr        #
+#    Updated: 2023/07/27 18:50:14 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,4 +64,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-#.SILENT:
+.SILENT:

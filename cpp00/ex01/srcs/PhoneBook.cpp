@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:04:12 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/26 15:37:18 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/07/27 18:49:41 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.hpp"
+
+/**
+ * initialize _contactIdx to -1 as there are no Contacts in the beginning
+*/
+PhoneBook::PhoneBook() : _contactIdx( -1 ) , _nContacts( 0 ) {
+	std::cout << "phonebook created" << std::endl;
+}
+
+PhoneBook::~PhoneBook() {
+	std::cout << "phonebook destroyed" << std::endl;
+}
 
 void	PhoneBook::_listEntries() const {
 	std::string		outstr;
@@ -43,7 +54,7 @@ void	PhoneBook::add() {
 
 void	PhoneBook::search() const {
 	std::string		line;
-	int				idxFromUser = -1;
+	int				idxFromUser;
 	
 	if (!this->_nContacts) {
 		std::cout << "No contacts in phonebook" << std::endl;
@@ -60,15 +71,4 @@ void	PhoneBook::search() const {
 		std::cout << "Please enter a valid index" << std::endl;
 	}
 	(this->_contacts[ idxFromUser ]).displayContact();
-}
-
-/**
- * initialize _contactIdx to -1 as there are no Contacts in the beginning
-*/
-PhoneBook::PhoneBook() : _contactIdx( -1 ) , _nContacts( 0 ) {
-	std::cout << "phonebook created" << std::endl;
-}
-
-PhoneBook::~PhoneBook() {
-	std::cout << "phonebook destroyed" << std::endl;
 }
