@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 19:54:09 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/30 19:54:32 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:44:54 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ private:
 	Weapon			_tatwaffe;
 
 public:
-	HumanB( std::string name);
+	HumanB( std::string name );
 	void			attack() const;
+	void			arm( Weapon tatwaffe );
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:09:48 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/30 19:45:28 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:48:34 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 
 public:
 	const std::string		&getType() const;
-	void			setType( std::string newType );
+	void					setType( std::string newType );
 };
 
 #endif

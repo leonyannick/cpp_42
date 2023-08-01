@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 19:43:26 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/30 19:52:13 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:43:14 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	Weapon			_tatwaffe;
 
 public:
-	HumanA( std::string name, std::string weaponType );
+	HumanA( std::string name, Weapon tatwaffe );
 	void			attack() const;
 };
 
