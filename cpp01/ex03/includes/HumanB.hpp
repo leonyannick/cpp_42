@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 19:54:09 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/08/01 14:44:54 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:49:24 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,20 @@
 #include <iostream>
 #include "Weapon.hpp"
 
+/**
+ * save Weapon here as a pointer, because HumanB is created without a weapon
+ * and a Reference cannot be declared without initializing
+*/
 class HumanB {
 
 private:
 	std::string		_name;
-	Weapon			_tatwaffe;
+	Weapon			*_pTatwaffe;
 
 public:
 	HumanB( std::string name );
 	void			attack() const;
-	void			arm( Weapon tatwaffe );
+	void			setWeapon( Weapon &tatwaffe );
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 19:43:26 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/08/01 14:43:14 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:52:32 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class HumanA {
 
 private:
 	std::string		_name;
-	Weapon			_tatwaffe;
+	Weapon			&_refTatwaffe;
 
 public:
-	HumanA( std::string name, Weapon tatwaffe );
+	HumanA( std::string name, Weapon &tatwaffe );
 	void			attack() const;
 };
 

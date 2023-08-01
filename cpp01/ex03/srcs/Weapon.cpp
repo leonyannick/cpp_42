@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:59:00 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/30 19:42:27 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:35:51 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Weapon.hpp"
+
+Weapon::Weapon() {
+	return;
+}
+
+Weapon::Weapon( std::string type ) : _type( type ) {
+	return;
+}
 
 const std::string		&Weapon::getType() const {
 	return (_type);
