@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:39:21 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/26 15:47:25 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 13:33:20 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ private:
 	std::string _lastName;
 	std::string _nickname;
 	std::string _phoneNumber;
+	std::string _darkestSecret;
 
 	/**
 	 * displayConact is const because it doesnt change the Contact instance

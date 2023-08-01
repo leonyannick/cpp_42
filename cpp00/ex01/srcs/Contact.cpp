@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:59:00 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/26 15:38:04 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 13:37:12 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	Contact::displayContact() const {
 	std::cout << "Nickname:\t";
 	std::cout << this->_nickname << std::endl;
 	std::cout << "Phone Number:\t";
-	std::cout << this->_phoneNumber << std::endl << std::endl;
+	std::cout << this->_phoneNumber << std::endl;
+	std::cout << "Darkest Secret:\t";
+	std::cout << this->_darkestSecret << std::endl << std::endl;
 }
 
 void	Contact::displayInfo() const {
@@ -59,4 +61,5 @@ void	Contact::setAttributes() {
 	this->_lastName = getInput("last name");
 	this->_nickname = getInput("nickname");
 	this->_phoneNumber = getInput("phone number");
+	this->_darkestSecret = getInput("darkest secret");
 }
