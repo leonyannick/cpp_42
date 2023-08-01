@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:04:12 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/27 18:49:41 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 13:44:38 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ void	PhoneBook::search() const {
 	}
 	
 	this->_listEntries();
-	std::cout << std::endl << "Please enter index of contact you want more details" << std::endl;
+	std::cout << std::endl 
+		<< "Please enter index of contact you want more details"
+	 	<< std::endl;
 	while (1) {
 		std::getline(std::cin, line);
 		idxFromUser = (int)line[ 0 ] - '0';

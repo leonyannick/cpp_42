@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 17:23:38 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/27 18:37:36 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:10:19 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
+#include "../includes/Account.hpp"
 
-#include <iostream>
-#include <ctime> //for _displayTimestamp
-#include <iomanip> //for setw
+//awk '{print $2}'
 
 Account::Account( int deposit ) 
-	: _nbDeposits( 0 ), _nbWithdrawals( 0 ),
-	_amount( deposit ), _accountIndex ( _nbAccounts ) {
+	:  _accountIndex( _nbAccounts ), _amount( deposit ),
+		_nbDeposits( 0 ), _nbWithdrawals( 0 ) {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "amount:" << _amount << ";";
@@ -123,7 +121,7 @@ void	Account::_displayTimestamp( void ) {
 	// Convert the current time to the local time
 	localTime = std::localtime(&currentTime);
 	// Format the local time as a string
-	std::strftime(timeBuffer, sizeof(timeBuffer), "[%Y%m%d %H%M%S] ", localTime);
+	std::strftime(timeBuffer, sizeof(timeBuffer), "[%Y%m%d_%H%M%S] ", localTime);
 	// Print the formatted time
 	std::cout << timeBuffer;
 }
