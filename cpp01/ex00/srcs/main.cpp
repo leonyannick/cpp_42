@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/27 20:15:12 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/02 13:55:44 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Zombie.hpp"
+#include <cstdlib>
 
 int main() {
 	Zombie*		leonOnHeap = newZombie( "Leon on heap" );

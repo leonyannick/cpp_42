@@ -6,29 +6,11 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/08/01 19:36:34 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:55:02 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Sed.hpp"
-
-/**
- * loops through str and finds occurrences of key and replaces them with
- * replacement
-*/
-static std::string		findAndReplace( std::string str, std::string key,
-										std::string replacement ) {
-	size_t		pos;
-	
-	while (1) {
-		pos = str.find(key, 0);
-		if (pos == std::string::npos)
-			break;
-		str.erase(pos, key.length());
-		str.insert(pos, replacement);
-	}
-	return (str);
-}
 
 /**
  * takes 3 cmd line arguments: <filename>, <key>, <replacement>
@@ -47,20 +29,32 @@ int main( int argc, char **argv ) {
 	std::string		key = argv[2];
 	std::string		replacement = argv[3];
 
-	std::string		line;
 	//construcor of fstream take a c string
+	//open infile and save its content in a string stream
+	//convert the stringstream to a std::string and save inside text
 	std::ifstream	ifs(infile.c_str());
-	std::ofstream	ofs(outfile.c_str());
-
-	//parse file line by line, replace occurrences and append to outfile
-	while (1) {
-		std::getline(ifs, line);
-		if (line.empty())
-			break;
-		// std::cout << line << std::endl;
-		ofs << findAndReplace(line, key, replacement) << std::endl;
+	if (ifs.fail()) {
+		std::perror("infile");
+		return ( EXIT_FAILURE );
 	}
+	std::stringstream	buffer;
+	buffer << ifs.rdbuf();
 	ifs.close();
+	std::string		text = buffer.str();
+	
+	//look for all occurrences of key and replace them with replacement
+	size_t		pos = 0;
+	while (( pos = text.find(key, pos) ) != std::string::npos) {
+		text.erase(pos, key.length());
+		text.insert(pos, replacement);
+	}
+
+	std::ofstream	ofs(outfile.c_str());
+	if (ofs.fail()) {
+		std::perror("outfile");
+		return ( EXIT_FAILURE );
+	}
+	ofs << text;
 	ofs.close();
 	return ( EXIT_SUCCESS );
 }

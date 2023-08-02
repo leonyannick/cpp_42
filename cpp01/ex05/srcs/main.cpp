@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/08/02 12:29:05 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/02 14:18:37 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main() {
 	Harl	grumpy;
-	grumpy.complain("ERROR");
+	grumpy.complain("INFO");
 	
-	return 0;
+	return (EXIT_SUCCESS);
 }

@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+         #
+#    By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/25 15:14:10 by lbaumann          #+#    #+#              #
-#    Updated: 2023/07/30 20:00:54 by lbaumann         ###   ########.fr        #
+#    Updated: 2023/08/02 14:03:16 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = weapon
+NAME = violence
 
 CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98

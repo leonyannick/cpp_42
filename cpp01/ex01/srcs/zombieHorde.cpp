@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:04:12 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/07/29 11:26:43 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/02 13:58:25 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Zombie.hpp"
 
 /**
- * first we create a Zombie arraz on the heap using the default constructor
+ * first we create a Zombie array on the heap using the default constructor
  * -> N times constructor called
  * 
  * then for each array entry we create a new Zombie instance on the stack and

@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:04:12 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/08/02 13:49:49 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/08/02 14:19:44 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void Harl::debug()
 	std::cout << "[DEBUG]\n" 
 		<< "I love having extra bacon for my 7XL-double-cheese-triple"
 		<< "-pickle-special- ketchup burger. I really do!\n" << std::endl;
+	return;
 }
 
 void Harl::info()
@@ -25,6 +26,7 @@ void Harl::info()
 		<< "I cannot believe adding extra bacon costs more money."
 		<< "You didn’t put enough bacon in my burger! If you did, "
 		<< "I wouldn’t be asking for more!\n" << std::endl;
+	return;
 }
 
 void Harl::warning()
@@ -33,13 +35,15 @@ void Harl::warning()
 		<< "I think I deserve to have some extra bacon for free. "
 		<< "I’ve been coming for years whereas you started working here"
 		<< " since last month.\n" << std::endl;
+	return;
 }
 
 void Harl::error()
 {
 	std::cout << "[ERROR]\n"
 		<< "This is unacceptable! I want to speak to the manager now.\n"
-		 << std::endl;
+		<< std::endl;
+	return;
 }
 
 void Harl::complain(std::string level)
@@ -69,4 +73,5 @@ void Harl::complain(std::string level)
 			std::cout << "[ Probably complaining about insignificant problems ]"
 				<< std::endl;
 	}
+	return;
 }
