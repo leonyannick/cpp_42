@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/06 17:56:41 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/07 13:31:55 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,17 @@ int main(void) {
   Point d(0, 0);
   std::cout << "point(0, 0) on border: " << bsp(one, two, three, d) << std::endl;
 
-  Point e(0, 50.01);
-  std::cout << "point(50.01, 0) outside " << bsp(one, two, three, e) << std::endl;
+  Point e(0.01, 0.01);
+  std::cout << "point(0.1, 0.1) inside " << bsp(one, two, three, e) << std::endl;
 
-  Point f(0, 50.001);
-  std::cout << "point(50.001, 0) outside, but imprecision " << bsp(one, two, three, f) << std::endl;
+  Point f(0.001, 0.001);
+  std::cout << "point(0.001, 0.001) inside, but imprecision " << bsp(one, two, three, f) << std::endl;
 
   Point g(20, 20);
   std::cout << "point(20, 20) inside " << bsp(one, two, three, g) << std::endl;
+
+  Point h(0, 20);
+  std::cout << "point(0, 20) on vertex: " << bsp (one, two, three, h) << std::endl;
   
   return (EXIT_SUCCESS);
 }

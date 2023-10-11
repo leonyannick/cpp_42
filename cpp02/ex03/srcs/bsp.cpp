@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:23:56 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/07 13:21:23 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/07 13:26:20 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 /**
  * calculate area of triangle spanned by points a, b, c
  * 
- * using coordinates: https://en.wikipedia.org/wiki/Area_of_a_triangle
+ * using coordinates formula: https://en.wikipedia.org/wiki/Area_of_a_triangle
+ * 
+ * sign area before returning -> returned area is always positive
 */
 static float areaTriangle(Point const a, Point const b, Point const c)
 {
@@ -33,7 +35,7 @@ static float areaTriangle(Point const a, Point const b, Point const c)
  * Thus, if the point is a vertex or on edge, it will return False.
  * 
  * calculate area of subtriangles. point is inside if area if
- * subtriangles equals area of triangle abc
+ * subtriangles areas equals area of triangle abc
  * 
  * point is vertex or on edge if area of one of the subtriangles
  * is 0 

@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:12:20 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/06 17:22:14 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/07 13:27:59 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ Point::Point(Point const &src) : _x(src._x), _y(src._y) {}
 
 Point::~Point() {}
 
+/**
+ * not sure if correct:
+ * Point b = a; -> possible
+ * b = a -> doesnt update coordinates of b with a,
+ * not sure if it even should do that because of const attributes
+*/
 Point &Point::operator=(Point const &rhs) {
 	if (this != &rhs)
 	{
