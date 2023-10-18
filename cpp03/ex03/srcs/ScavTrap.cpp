@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 17:00:12 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/17 13:24:42 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:39:55 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-	std::cout << "ST constructor called" << std::endl;
+	std::cout << "ST " << _name << " constructed." << std::endl;
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ST destructor called" << std::endl;
+	std::cout << "ST " << _name << " destructed." << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target) {

@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:23:56 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/17 13:21:10 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:46:02 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ ClapTrap::ClapTrap() {
 
 ClapTrap::ClapTrap(std::string name)
   : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-	std::cout << "CT Constuctor called" << std::endl;
+	std::cout << "CT " << _name << " constructed." << std::endl;
   }
 
 ClapTrap::ClapTrap(ClapTrap const &src)
 {
 //assign attributes
 //or use definition from copy assignment operator
-	std::cout << "CT Copy constructor called" << std::endl;
+	std::cout << "CT Copy constructor called: " << src._name << std::endl;
 	*this = src;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "CT Descructor called" << std::endl;
+	std::cout << "CT " << _name << " destructed." << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs)
@@ -65,6 +65,8 @@ void	ClapTrap::setHitPoints(int amount) { _hitPoints = amount; }
 void	ClapTrap::setEnergyPoints(int amount) { _energyPoints = amount; }
 
 void	ClapTrap::setAttackDamage(int amount) { _attackDamage = amount; }
+
+void	ClapTrap::setName(std::string name) { _name = name; }
 
 void ClapTrap::attack(const std::string& target) {
 	if (_energyPoints <= 0) {

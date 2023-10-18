@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 16:36:27 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/17 13:23:15 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/10/17 14:33:07 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "../includes/ClapTrap.hpp"
+#include "../includes/FragTrap.hpp"
+#include "../includes/ScavTrap.hpp"
+#include "../includes/DiamondTrap.hpp"
+#include <cstdlib>
+#include <iostream>
 
-# include "ClapTrap.hpp"
+int main(void) {
+  DiamondTrap leon("leon");
 
-# include <iostream>
-# include <string>
-
-class ScavTrap : public ClapTrap
-{
-public:
-	ScavTrap(std::string name);
-	// ScavTrap(ScavTrap const & src);
-	~ScavTrap();
-
-	void attack(const std::string& target);
-	void guardGate();
-
-	// ScavTrap &operator=(ScavTrap const & rhs);
-private:
-	ScavTrap();
-};
-
-#endif
+  std::cout << leon << std::endl;
+  leon.whoAmI();
+  return (EXIT_SUCCESS);
+}

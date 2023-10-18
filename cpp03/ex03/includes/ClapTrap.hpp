@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:09:48 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/17 13:22:46 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:30:28 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
   void         setHitPoints(int amount);
   void         setEnergyPoints(int amount);
   void         setAttackDamage(int amount);
+  void         setName(std::string name);
 
   ClapTrap &operator=(ClapTrap const & rhs);
 
