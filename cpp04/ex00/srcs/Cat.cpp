@@ -6,11 +6,11 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:56:28 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/18 16:02:45 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:20:48 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Cat.hpp"
+#include "Cat.hpp"
 
 Cat::Cat() {
   type = "cat";

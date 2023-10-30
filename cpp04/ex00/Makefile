@@ -6,13 +6,13 @@
 #    By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/25 15:14:10 by lbaumann          #+#    #+#              #
-#    Updated: 2023/10/18 16:06:57 by lbaumann         ###   ########.fr        #
+#    Updated: 2023/10/30 14:21:20 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = animals
 
-CC = c++
+CC = c++ -std=c++98 -Werror -Wextra -Wall
 CFLAGS = 
 MAKEFLAGS   += --no-print-directory
 
@@ -21,20 +21,22 @@ CFLAGS =
 endif
 
 ifeq ($(DEBUG), 1)
-CFLAGS = -g -std=c++98
+CFLAGS = -g
 all: fclean
 endif
 
 SRCDIR := srcs
 OBJDIR := objs
 
-HEADERS = -I/includes
+HEADERS = -I includes
 
 SRCS = \
 	main.cpp \
 	Cat.cpp \
 	Animal.cpp \
 	Dog.cpp \
+	WrongAnimal.cpp \
+	WrongCat.cpp \
 	
 #append directory in front of srcs/objs
 SRCS		:= $(SRCS:%=$(SRCDIR)/%)
@@ -43,7 +45,7 @@ OBJS		:= $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+	$(CC) $(OBJS) $(HEADERS) -o $(NAME)
 	$(info CREATED $(NAME))
 
 #	'$@': target

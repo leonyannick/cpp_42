@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 16:36:27 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/30 16:29:46 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/07/26 10:09:48 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/10/30 14:07:40 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-# include "AAnimal.hpp"
+#include <iostream>
+#include <string>
 
-# include <iostream>
-# include <string>
-
-class Cat : public AAnimal
+class WrongAnimal
 {
 public:
-	Cat();
-	~Cat();
-	
-	Cat(Cat const & src);
-	Cat &operator=(Cat const & rhs);
+  WrongAnimal();
+  WrongAnimal(WrongAnimal const & src);
+  ~WrongAnimal();
 
-	virtual void makeSound() const;
-private:
-	Brain *_brain;
+  WrongAnimal &operator=(WrongAnimal const & rhs);
+
+  std::string getType() const;
+  void makeSound() const;
+protected:
+  std::string type;
 };
+
+std::ostream &		operator<<(std::ostream & o, WrongAnimal const & i);
 
 #endif

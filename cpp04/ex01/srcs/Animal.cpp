@@ -6,11 +6,11 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:47:30 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/27 21:09:39 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:28:49 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
+#include "Animal.hpp"
 
 Animal::Animal() : type("abstractAnimal") {
   std::cout << "Created an animal with the standard constructor." << std::endl;

@@ -7,9 +7,9 @@
 	{
 	"name":"Launch",
 	"type":"cppdbg",
-	"program":"${workspaceFolder}/cpp01/ex04/sed",
-	"args":["file", "test", "not"],
-	"cwd":"${workspaceFolder}/cpp01/ex04/",
+	"program":"${workspaceFolder}/cpp04/ex01/brain",
+	"args":[],
+	"cwd":"${workspaceFolder}/cpp04/ex01/",
 	"request":"launch",
 	"MIMode":"gdb"
 	}

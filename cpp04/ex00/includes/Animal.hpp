@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:09:48 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/18 16:03:48 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:22:18 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 #include <iostream>
 #include <string>
 
-#include <iostream>
-
 class Animal
 {
 public:
   Animal();
   Animal(Animal const & src);
-  ~Animal();
+  virtual ~Animal();
 
   Animal &operator=(Animal const & rhs);
 

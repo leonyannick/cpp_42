@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/27 21:26:57 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:32:04 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 
 int main(void) {
   const AAnimal* j = new Cat();
+	j->makeSound();
 
+	//AAnimal notworking; should not work because function AAnimal is abstract
 
-  //should not create a 
-  // delete i;
+	delete j;
 
-  // const Cat* Katze = new Cat();
-  // delete Katze;
-  
   return (EXIT_SUCCESS);
 }

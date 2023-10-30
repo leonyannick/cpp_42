@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 16:36:27 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/30 16:29:46 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/10/30 14:09:48 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/10/30 14:10:12 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "../includes/WrongCat.hpp"
 
-# include "AAnimal.hpp"
+WrongCat::WrongCat() {
+  type = "WrongCat";
+  std::cout << "Created a WrongCat with the standard constructor." << std::endl;
+}
 
-# include <iostream>
-# include <string>
+WrongCat::~WrongCat() {
+  std::cout << "Killed a WrongCat with the standard destructor." << std::endl;
+}
 
-class Cat : public AAnimal
-{
-public:
-	Cat();
-	~Cat();
-	
-	Cat(Cat const & src);
-	Cat &operator=(Cat const & rhs);
-
-	virtual void makeSound() const;
-private:
-	Brain *_brain;
-};
-
-#endif
+void WrongCat::makeSound() const {
+	std::cout << "Miau" << std::endl;
+}

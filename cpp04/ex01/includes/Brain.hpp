@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 22:01:19 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/20 22:08:28 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:19:02 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ public:
 	~Brain();
 
 	Brain &operator=(Brain const & rhs);
+
+	void saveMemory(const std::string& memory);
+	std::string retrieveMemory() const;
 private:
 	std::string ideas[100];
 };
