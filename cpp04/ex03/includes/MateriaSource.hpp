@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 21:40:15 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/31 12:22:59 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/10/30 17:12:39 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/10/31 14:51:22 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
 #include <iostream>
 #include <string>
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 
 #include <iostream>
 
-class Ice : public AMateria
+class MateriaSource : public IMateriaSource
 {
 public:
-	Ice();
-	Ice(Ice const & src);
-	~Ice();
+	MateriaSource();
+	MateriaSource(MateriaSource const & src);
+	~MateriaSource();
 
-	Ice &operator=(Ice const & rhs);
-	virtual AMateria* clone() const;
-	//virtual void use(ICharacter& target);
+	MateriaSource &operator=(MateriaSource const & rhs);
+
+	virtual void learnMateria(AMateria*);
+	virtual AMateria* createMateria(std::string const & type);
 private:
-	
+	AMateria* _storage[4];
+	int	_storageIdx;
 };
 
-std::ostream &		operator<<(std::ostream & o, Ice const & i);
 #endif

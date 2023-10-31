@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 21:40:15 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/31 12:22:59 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/10/31 12:48:29 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/10/31 12:48:59 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef CURE_HPP
+#define CURE_HPP
 
 #include <iostream>
 #include <string>
@@ -20,19 +20,19 @@
 
 #include <iostream>
 
-class Ice : public AMateria
+class Cure : public AMateria
 {
 public:
-	Ice();
-	Ice(Ice const & src);
-	~Ice();
+	Cure();
+	Cure(Cure const & src);
+	~Cure();
 
-	Ice &operator=(Ice const & rhs);
+	Cure &operator=(Cure const & rhs);
 	virtual AMateria* clone() const;
 	//virtual void use(ICharacter& target);
 private:
 	
 };
 
-std::ostream &		operator<<(std::ostream & o, Ice const & i);
+std::ostream &		operator<<(std::ostream & o, Cure const & i);
 #endif

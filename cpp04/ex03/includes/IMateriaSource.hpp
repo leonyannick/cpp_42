@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 21:40:15 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/31 12:22:59 by lbaumann         ###   ########.fr       */
+/*   Created: 2023/10/30 17:11:23 by lbaumann          #+#    #+#             */
+/*   Updated: 2023/10/30 17:12:13 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
 #include <iostream>
 #include <string>
+
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
-#include <iostream>
-
-class Ice : public AMateria
+class IMateriaSource
 {
 public:
-	Ice();
-	Ice(Ice const & src);
-	~Ice();
-
-	Ice &operator=(Ice const & rhs);
-	virtual AMateria* clone() const;
-	//virtual void use(ICharacter& target);
-private:
-	
+	virtual ~IMateriaSource() {}
+	virtual void learnMateria(AMateria*) = 0;
+	virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
-std::ostream &		operator<<(std::ostream & o, Ice const & i);
 #endif

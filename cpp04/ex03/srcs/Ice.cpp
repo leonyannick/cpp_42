@@ -6,23 +6,23 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 22:04:31 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/27 22:07:02 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/31 14:52:42 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Ice.hpp"
 
 Ice::Ice() : AMateria("ice") {
-	std::cout << "Ice constructed" << std::endl;
+	// std::cout << "Ice constructed" << std::endl;
 }
 
 Ice::Ice(Ice const &src) : AMateria("ice") {
 	*this = src;
-	std::cout << "Ice copy constructed" << std::endl;
+	// std::cout << "Ice copy constructed" << std::endl;
 }
 
 Ice::~Ice()	{
-	std::cout << "Ice destroyed" << std::endl;
+	// std::cout << "Ice destroyed" << std::endl;
 }
 
 Ice &Ice::operator=(Ice const &rhs)
@@ -43,3 +43,8 @@ std::ostream &operator<<(std::ostream &o, Ice const &i)
 AMateria* Ice::clone() const {
 	return (new Ice());
 }
+
+// void Ice::use(ICharacter& target) {
+// 	std::cout << "* shoots an ice bolt at " << target.getName()
+// 		<< " *" << std::endl;
+//}

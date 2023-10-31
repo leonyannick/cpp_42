@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 22:10:05 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/30 09:57:22 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/31 12:41:03 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,50 +17,27 @@
 #include <string>
 #include "ICharacter.hpp"
 
-#include <iostream>
 
 class Character : public ICharacter
 {
 public:
-	Character();
+	Character(const std::string& name);
 	Character(Character const & src);
 	~Character();
 
 	Character &operator=(Character const & rhs);
+
+	virtual std::string const & getName() const;
+	virtual void equip(AMateria* m);
+	virtual void unequip(int idx);
+	virtual void use(int idx, ICharacter& target);
 private:
-	AMateria* inventory[4];
+	Character();
+	
+	AMateria* _inventory[4];
+	std::string _name;
 };
 
 std::ostream &		operator<<(std::ostream & o, Character const & i);
-
-Character::Character()
-{
-}
-
-Character::Character(Character const &src)
-{
-//assign attributes
-//or use definition from copy assignment operator
-// *this = src;
-}
-
-Character::~Character()
-{
-}
-
-Character &Character::operator=(Character const &rhs)
-{
-	if (this != &rhs)
-		{
-		//copying of member attributes here
-		}
-	return (*this);
-}
-
-std::ostream &operator<<(std::ostream &o, Character const &i)
-{
-	//o << <fill ostream with attributes>
-	return (o);
-}
 
 #endif
