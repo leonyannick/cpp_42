@@ -6,13 +6,13 @@
 #    By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/25 15:14:10 by lbaumann          #+#    #+#              #
-#    Updated: 2023/10/11 19:03:49 by lbaumann         ###   ########.fr        #
+#    Updated: 2023/10/31 14:57:13 by lbaumann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = claptrap
 
-CC = c++
+CC = c++ -std=c++98 -Werror -Wextra -Wall
 CFLAGS = 
 MAKEFLAGS   += --no-print-directory
 
@@ -21,14 +21,14 @@ CFLAGS =
 endif
 
 ifeq ($(DEBUG), 1)
-CFLAGS = -g -std=c++98
+CFLAGS = -g
 all: fclean
 endif
 
 SRCDIR := srcs
 OBJDIR := objs
 
-HEADERS = -I/includes
+HEADERS = -I includes
 
 SRCS = \
 	main.cpp \

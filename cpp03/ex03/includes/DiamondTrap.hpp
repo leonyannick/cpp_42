@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:50:20 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/18 15:32:32 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:02:57 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,10 @@ public:
 
 	void	whoAmI();
 
-	using ScavTrap::attack;
+	using ScavTrap::attack; //alternative: have attack class that calls ScavTrap::attack
 
 private:
 	DiamondTrap();
-
-	// using FragTrap::_hitPoints;
-	// using ScavTrap::_energyPoints;
-	// using FragTrap::_attackDamage;
-	
 
 	std::string _name;
 };
