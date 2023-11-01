@@ -6,11 +6,12 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:04:12 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/02 13:07:00 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:30:02 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Fixed.hpp"
+#include <math.h>
 
 Fixed::Fixed() : _numberValue(0) {
   std::cout << "Default constructor called" << std::endl;
@@ -30,6 +31,8 @@ Fixed::Fixed(int const number)
   std::cout << "Int constructor called" << std::endl;
 }
 
+//this is equivalent to the bit shifting with int, only that bit shift
+//operators are not defined for float
 Fixed::Fixed(float const number)
   : _numberValue(roundf(number * (1 << _numberFractionalBits))){
   std::cout << "Float constructor called" << std::endl;

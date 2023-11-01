@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/07 13:31:55 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:33:42 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void) {
   std::cout << "b " << b << std::endl;
   std::cout << "c initial " << c << std::endl;
   std::cout << "a assigned to c " << c << std::endl;
-  std::cout << "a " << a << std::endl;
+  std::cout << "c " << a << std::endl;
   
   Point one(0, 0);
   Point two(0, 50);

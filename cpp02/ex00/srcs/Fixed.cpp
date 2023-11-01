@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:04:12 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/09/27 12:11:49 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:28:17 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ Fixed::Fixed() : _numberValue(0) {
 */
 Fixed::Fixed(Fixed const &src) {
   std::cout << "Copy constructor called" << std::endl;
-  this->setRawBits(src.getRawBits());
-	// *this = src;
+//   this->setRawBits(src.getRawBits());
+	*this = src;
 }
 
 /**
@@ -45,7 +45,7 @@ int Fixed::getRawBits(void) const {
 }
 
 void Fixed::setRawBits(int const raw) {
-  std::cout << "setRawBits member function called" << std::endl;
+//   std::cout << "setRawBits member function called" << std::endl;
   _numberValue = raw;
 }
 

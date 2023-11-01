@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:09:48 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/02 12:55:37 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:29:46 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <string>
 
-#include <iostream>
 
 class Fixed {
 public:
