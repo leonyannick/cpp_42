@@ -18,7 +18,7 @@ public:
 	};
 
 	// public methods
-	void	beSigned(Bureaucrat& b);
+	void	beSigned(Bureaucrat& b) throw (GradeTooLowException);
 	void	signForm() const;
 
 	//Getters and Setters
@@ -35,6 +35,7 @@ public:
 private:
 	//Data
 	const std::string _name;
+	std::string _signedBy;
 	bool _isSigned;
 	const int _gradeSign;
 	const int _gradeExec;
