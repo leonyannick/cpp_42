@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 17:00:12 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/17 13:39:55 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:50:08 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void ScavTrap::attack(const std::string& target) {
 		return;
 	}
 	if (_hitPoints <= 0) {
-		std::cout << "Dead ClapTrap cannot attack" << std::endl;
+		std::cout << "Dead ScavTrap cannot attack" << std::endl;
 		return;
 	}
 	--_energyPoints;
