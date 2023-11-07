@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/30 16:26:34 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:11:22 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@
 int main(void) {
   const Animal* j = new Dog();
   const Animal* i = new Cat();
-
-  const Animal *temp = j;
-
-	j = i;
 
 	Dog a;
 	a.memorize("bones");
@@ -42,7 +38,7 @@ int main(void) {
 	b.retrieve();
 
   delete j;
-  delete temp;
+  delete i;
 
   const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
   for ( int i = 0; i < 4; i++ ) {
