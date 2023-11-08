@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:05:34 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/11/07 13:05:28 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/11/08 12:16:41 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ Dog &Dog::operator=(Dog const &rhs)
 {
 	if (this != &rhs)
 		{
-			delete _brain;
-			type = rhs.type;
-			_brain = new Brain(*rhs._brain);
+			*_brain = *rhs._brain;
 		}
 	return (*this);
 }
