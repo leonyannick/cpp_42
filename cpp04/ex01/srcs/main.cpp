@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/11/07 11:11:22 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:07:45 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ int main(void) {
   for ( int i = 0; i < 4; i++ ) {
 		delete animals[i];
     }
-  //should not create a 
-  // delete i;
-
-  // const Cat* Katze = new Cat();
-  // delete Katze;
   
   return (EXIT_SUCCESS);
 }

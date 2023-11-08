@@ -1,12 +1,23 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 /*------------------PUBLIC METHODS -----------------*/
 
-void Form::signForm() const {
-	if (_isSigned)
-		std::cout << _signedBy << " signed " << _name << std::endl;
-	else
-		std::cout << text << std::endl;
+void	Form::beSigned(Bureaucrat& b) throw (GradeTooLowException) {
+	if (b.getGrade() <= this->_gradeSign) {
+		this->_isSigned = true;
+	}
+	else {
+		throw (GradeTooLowException());
+	}
+}
+
+const char *Form::GradeTooHighException::what() const throw() {
+	return ("Form exception: grade too high");
+}
+
+const char *Form::GradeTooLowException::what() const throw() {
+	return ("Form exception: grade too low");
 }
 
 /*----------------GETTERS AND SETTERS --------------*/
@@ -22,10 +33,10 @@ int Form::getGradeExec() const {return (_gradeExec);}
 /*-----------CONSTRUCTOR, ASSIGNEMENT, DESTRUCTOR------ */
 
 Form::Form(std::string name, int gradeSign, int gradeExec) throw (std::exception)
-	: _name(name), _gradeSign(gradeSign), _gradeExec(_gradeExec), _isSigned(false) {
+	: _name(name), _isSigned(false), _gradeSign(gradeSign), _gradeExec(gradeExec) {
 		if (gradeSign > 150 || gradeExec > 150)
 			throw (GradeTooLowException());
-		if (gradeSign < 1 || gradeExec > 1)
+		if (gradeSign < 1 || gradeExec < 1)
 			throw(GradeTooHighException());
 	}
 
@@ -52,6 +63,6 @@ std::ostream &operator<<(std::ostream &o, Form const &i)
 {
 	o << "Form " << i.getName() << " requires " << i.getGradeSign()
 	<< "/" << i.getGradeExec() << " to sign/exec. It is "
-	<< (i.getSignStatus()) ? "signed" : "not signed";
+	<< ((i.getSignStatus()) ? "signed" : "not signed");
 	return (o);
 }

@@ -6,15 +6,14 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:56:28 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/30 14:30:02 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:04:56 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() {
+Cat::Cat(): _brain(new Brain()) {
   type = "cat";
-  _brain = new Brain();
   std::cout << "Created a cat with the standard constructor." << std::endl;
 }
 
@@ -27,7 +26,7 @@ void Cat::makeSound() const {
 	std::cout << "Miau" << std::endl;
 }
 
-Cat::Cat(Cat const &src)
+Cat::Cat(Cat const &src) : _brain(new Brain())
 {
 //assign attributes
 //or use definition from copy assignment operator

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -21,7 +21,9 @@ public:
 	// public methods
 	void	incrementGrade() throw(GradeTooHighException);
 	void	decrementGrade() throw(GradeTooLowException);
-	void	signForm(Form& f) const;
+	void	signForm(AForm& f) const;
+	void	executeForm(AForm const & form) const
+		throw (GradeTooLowException, AForm::NotSignedException);
 
 	//Getters and Setters
 	std::string	getName() const;

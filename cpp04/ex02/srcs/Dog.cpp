@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:05:34 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/30 16:25:12 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:05:28 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void Dog::makeSound() const {
 	std::cout << "Wuff" << std::endl;
 }
 
-Dog::Dog(Dog const &src)
+Dog::Dog(Dog const &src) : _brain(new Brain())
 {
 //assign attributes
 //or use definition from copy assignment operator
@@ -43,10 +43,9 @@ Dog &Dog::operator=(Dog const &rhs)
 {
 	if (this != &rhs)
 		{
-			// delete _brain;
+			delete _brain;
 			type = rhs.type;
-			// _brain = new Brain(*rhs._brain);
-			*(_brain) = *(rhs._brain);
+			_brain = new Brain(*rhs._brain);
 		}
 	return (*this);
 }

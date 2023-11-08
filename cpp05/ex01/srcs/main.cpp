@@ -5,40 +5,41 @@
 int main()
 {
 	try {
-		Bureaucrat horst("horst", 150);
-		std::cout << "horst created" << std::endl;
-		horst.decrementGrade();
+		Form bafoeg("bafoeg", -1, 1);
 	}
 	catch (std::exception& e) {
-		std::cout << "horst " << e.what() << std::endl;
+		std::cout << "bafoeg " << e.what() << std::endl;
 	}
-
+	std::cout << std::endl;
+	try {
+		Form bafoeg("bafoeg", 1, 151);
+	}
+	catch (std::exception& e) {
+		std::cout << "bafoeg " << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	try {
+		Bureaucrat renate("renate", 3);
+		Form bafoeg("bafoeg", 2, 150);
+		std::cout << bafoeg << std::endl;
+		renate.signForm(bafoeg);
+		bafoeg.beSigned(renate);
+	}
+	catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
 	try {
 		Bureaucrat renate("renate", 1);
-		std::cout << "renate created" << std::endl;
-		renate.incrementGrade();
-		std::cout << renate.getGrade() << std::endl;
+		std::cout << renate << std::endl;
+		Form bafoeg("bafoeg", 2, 150);
+		std::cout << bafoeg << std::endl;
+		bafoeg.beSigned(renate);
+		renate.signForm(bafoeg);
+		std::cout << bafoeg << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cout << "renate " << e.what() << std::endl;
-	}
-
-	try {
-		Bureaucrat guenther("guenther", 0);
-		std::cout << "guenther created" << std::endl;
-	}
-	catch (std::exception& e) {
-		std::cout << "guenther not created" << std::endl;
-		std::cout << "guenther " << e.what() << std::endl;
-	}
-
-	try {
-		Bureaucrat heinrich ("heinrich", 151);
-		std::cout << "heinrich created" << std::endl;
-	}
-	catch (std::exception& e) {
-		std::cout << "heinrich not created" << std::endl;
-		std::cout << "heinrich " << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	return (EXIT_SUCCESS);
 }

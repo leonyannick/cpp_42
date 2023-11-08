@@ -1,12 +1,12 @@
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include <iostream>
 #include <stdexcept>
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 public:
 	class GradeTooHighException : public std::exception {
@@ -17,9 +17,17 @@ public:
 		public:
 			virtual const char *what() const throw();
 	};
+	class NotSignedException : public std::exception {
+		public:
+			virtual const char *what() const throw();
+	};
 
 	// public methods
-	void	beSigned(Bureaucrat& b) throw (GradeTooLowException);
+	void			beSigned(Bureaucrat& b) throw (GradeTooLowException);
+	void			execute(Bureaucrat const & executor) const
+		throw (GradeTooLowException, NotSignedException);
+	virtual void	action() const = 0;
+
 
 	//Getters and Setters
 	std::string getName() const;
@@ -28,9 +36,9 @@ public:
 	int	getGradeExec() const;
 
 	// Constructors, Assignment, Destructors
-	Form(std::string name, int gradeSign, int gradeExec) throw (std::exception);
-	Form(const Form& copy);
-	~Form(void);
+	AForm(std::string name, int gradeSign, int gradeExec) throw (std::exception);
+	AForm(const AForm& copy);
+	virtual ~AForm(void);
 
 private:
 	//Data
@@ -40,10 +48,10 @@ private:
 	const int _gradeExec;
 
 	//hide from user
-	Form(void);
-	Form& operator=(const Form& other);
+	AForm(void);
+	AForm& operator=(const AForm& other);
 };
 
-std::ostream &		operator<<(std::ostream & o, Form const & i);
+std::ostream &		operator<<(std::ostream & o, AForm const & i);
 
 #endif

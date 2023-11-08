@@ -14,6 +14,27 @@ void Bureaucrat::decrementGrade() throw (GradeTooLowException) {
 	++_grade;
 }
 
+void Bureaucrat::signForm(AForm& f) const {
+	if (f.getSignStatus()) {
+		std::cout << this->getName() << " signed " << f.getName()
+			<< std::endl;
+	}
+	else {
+		std::cout << this->getName() << " couldn't sign " << f.getName()
+			<< " because the stars weren't aligned right." << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const & form) const
+	throw (GradeTooLowException, AForm::NotSignedException) {
+	if (!form.getSignStatus())
+		throw (AForm::NotSignedException());
+	if (this->getGrade() >= form.getGradeExec()) {
+		throw (GradeTooLowException());
+	}
+	form.execute(*this);
+}
+
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("Exception: Grade cannot be higher than 1");
 }
