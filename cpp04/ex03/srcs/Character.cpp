@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:50:12 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/11/07 13:13:26 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:23:56 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 Character::Character(const std::string& name) : _name(name) {
 	for (int i = 0; i < 4; i++) {
-    	_inventory[i] = 0;
+    	_inventory[i] = NULL;
     }
 	// std::cout << "Character " << _name << " created." << std::endl;
 }
 
 Character::Character(Character const &src)
 {
+	for (int i = 0; i < 4; i++) {
+    	_inventory[i] = NULL;
+    }
 	// std::cout << "character copy constructor" << std::endl;
 //assign attributes
 //or use definition from copy assignment operator
@@ -44,8 +47,10 @@ Character &Character::operator=(Character const &rhs)
 			_name = rhs._name;
 			for (size_t i = 0; i < 4; i++)
 			{
-				delete _inventory[i];
-				_inventory[i] = rhs._inventory[i]->clone();
+				if (_inventory[i])
+					delete _inventory[i];
+				if (rhs._inventory[i])
+					_inventory[i] = rhs._inventory[i]->clone();
 			}
 		}
 	return (*this);
@@ -71,7 +76,7 @@ void Character::equip(AMateria *m) {
 		if (!_inventory[i])
 		{
 			_inventory[i] = m;
-			break;	
+			break;
 		}
 	}
 }
@@ -86,4 +91,6 @@ void	Character::unequip(int idx) {
 void Character::use(int idx, ICharacter& target) {
 	if (idx >= 0 && idx < 4 && _inventory[idx])
 		_inventory[idx]->use(target);
+	else
+		std::cout << this->getName() << " nothing equipped at idx: " << idx << std::endl;
 }

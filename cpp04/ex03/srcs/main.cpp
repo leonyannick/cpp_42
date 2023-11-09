@@ -6,7 +6,7 @@
 /*   By: lbaumann <lbaumann@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:56:59 by lbaumann          #+#    #+#             */
-/*   Updated: 2023/10/31 14:54:57 by lbaumann         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:22:59 by lbaumann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,20 @@ int main()
 	me->equip(tmp);
 	me->use(0, *bob);
 	
+	//here i test if the assignment operator makes a deep copy
+	//if it would be a shallow copy, unequiping of deepcp would also affect
+	//deepcp2, but because Materia is cloned in copy assignment there is no problem
+	AMateria *tmp2 = src->createMateria("ice");
+	Character deepcp("deepcp");
+	deepcp.equip(tmp2);
+	Character deepcp2("deepcp2");
+	deepcp2 = deepcp;
+	deepcp.unequip(0);
+	deepcp2.use(0, deepcp);
+	deepcp.use(0, deepcp2);
+	delete tmp2;
+	
+
 	//unequiped materia has to be manually deleted
 	me->unequip(0);
 	delete tmp;
