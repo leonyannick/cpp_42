@@ -7,9 +7,9 @@
 	{
 	"name":"Launch",
 	"type":"cppdbg",
-	"program":"${workspaceFolder}/cpp05/ex03/intern",
+	"program":"${workspaceFolder}/cpp07/ex02/array",
 	"args":[],
-	"cwd":"${workspaceFolder}/cpp05/ex03/",
+	"cwd":"${workspaceFolder}/cpp07/ex02/",
 	"request":"launch",
 	"MIMode":"gdb"
 	}
