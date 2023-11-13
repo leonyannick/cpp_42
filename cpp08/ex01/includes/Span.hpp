@@ -4,7 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include <stdexcept>
-#include <list>
+#include <vector>
 #include <numeric>
 
 class Span
@@ -13,10 +13,12 @@ public:
 	class SpanFullException : std::exception
 	{
 		public:
-			const char *what() const throw() {return ("Spann is full");};
+			const char *what() const throw() {return ("Span is full");};
 	};
 	// public methods
 	void	addNumber(int nb) throw (SpanFullException);
+	void	addNumbers(std::vector<int>::const_iterator begin,
+		std::vector<int>::const_iterator end) throw (SpanFullException);
 	int		shortestSpan() const;
 	int		longestSpan() const;
 
@@ -33,8 +35,9 @@ private:
 	Span();
 	// Data
 	unsigned int _max;
-	unsigned int _count;
-	std::list<int> _numbers;
+	std::vector<int> _numbers;
 };
+
+std::ostream &		operator<<(std::ostream & o, Span const & i);
 
 #endif
