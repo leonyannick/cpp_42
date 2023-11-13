@@ -45,15 +45,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) throw (std::exception)
 Bureaucrat::Bureaucrat(const Bureaucrat& src) 
 	: _name(src._name), _grade(src._grade) {}
 
-Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
-{
-	if (this != &rhs)
-		{
-			//
-		}
-	return (*this);
-}
-
 Bureaucrat::~Bureaucrat(void)
 {}
 

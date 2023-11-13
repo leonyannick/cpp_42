@@ -46,6 +46,7 @@ int main()
 	catch (std::exception& e) {
 		std::cout << "form1: " << e.what() << std::endl;
 	}
+	delete randomForm;
 	return (EXIT_SUCCESS);
 }
 
