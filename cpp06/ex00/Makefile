@@ -1,6 +1,6 @@
 NAME = converter
 
-CC = c++ -std=c++98 #-Werror -Wextra -Wall
+CC = c++ -std=c++98 -Werror -Wextra -Wall
 CFLAGS = 
 MAKEFLAGS   += --no-print-directory
 
