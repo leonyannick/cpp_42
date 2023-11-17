@@ -17,7 +17,6 @@ public:
 
 private:
 	static void	displayConversion(double d);
-	static void	display();
 	ScalarConverter(void);
 };
 
