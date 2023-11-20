@@ -45,7 +45,7 @@ void	ScalarConverter::displayConversion(double d) {
 void	ScalarConverter::convert(std::string literal) {
 	double	d;
 	char *endptr;
-	if (literal.size() == 1 && !std::isdigit(literal.front()))
+	if (literal.size() == 1 && !std::isdigit(literal[0]))
 		d = literal[0];
 	else if (literal == "nan")
 		d = std::numeric_limits<double>::quiet_NaN();
@@ -54,8 +54,8 @@ void	ScalarConverter::convert(std::string literal) {
 	else if (literal == "-inf" || literal == "-inff")
 		d = -std::numeric_limits<double>::infinity();
 	else {
-		if (literal.back() == 'f')
-			literal.pop_back();
+		if (literal[literal.size() - 1] == 'f')
+			literal.erase(literal.end() - 1, literal.end());
 		d = std::strtod(literal.c_str(), &endptr);
 		if (*endptr != '\0') {
 			std::cerr << "Conversion failed." << std::endl;
