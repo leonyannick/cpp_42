@@ -5,6 +5,8 @@
 
 template<typename T, typename U>
 void	iter(T* arr, size_t arrLen, U function) {
+	if (!arr)
+		return;
 	for (size_t i = 0; i < arrLen; i++) {
 		function(arr[i]);
 	}

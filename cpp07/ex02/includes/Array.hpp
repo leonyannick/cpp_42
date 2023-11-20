@@ -50,7 +50,13 @@ public:
 		return (*this);
 	}
 
-	T& operator[](unsigned int idx) const throw (std::exception) {
+	T& operator[](unsigned int idx) throw (std::exception) {
+		if (idx < 0 || idx >= _nElements)
+			throw(std::out_of_range("Index out of range"));
+		return (_mem[idx]);
+		};
+
+	const T& operator[](unsigned int idx) const throw (std::exception) {
 		if (idx < 0 || idx >= _nElements)
 			throw(std::out_of_range("Index out of range"));
 		return (_mem[idx]);
