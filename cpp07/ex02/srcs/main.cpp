@@ -60,8 +60,11 @@ int	main(void) {
 	}
 	std::cout << std::endl;
 	
-	
+	const Array<int> constTest(5);
+	std::cout << constTest[4] << std::endl;
+	//constTest[4] = 3; //doesnt work because const
 
+	std::cout << std::endl;
 	iter(&intArr[0], 5, print<int>);
 
 	return (EXIT_SUCCESS);
