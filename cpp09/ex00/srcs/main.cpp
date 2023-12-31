@@ -10,4 +10,5 @@ int	main(int argc, char* argv[]) {
 	BitcoinExchange	be;
 
 	be.loadDatabase(DB_FILE);
+	be.calculateValue("input.txt");
 }

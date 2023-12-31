@@ -7,6 +7,8 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
+#include <limits>
+#include <limits.h>
 
 
 class BitcoinExchange
@@ -14,6 +16,7 @@ class BitcoinExchange
 public:
 	// public methods
 	int	loadDatabase(const std::string& filename);
+	int	calculateValue(const std::string& filename);
 
 	//Getters and Setters
 
