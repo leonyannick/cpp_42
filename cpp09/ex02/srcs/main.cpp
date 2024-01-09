@@ -1,5 +1,18 @@
 #include "PmergeMe.hpp"
 
+// static void	generateJacobsthalNums() {
+// 	double n;
+	
+// 	for (size_t i = 0; i < 30; i++)
+// 	{
+// 		n = (std::pow(2, i + 1) + std::pow(-1, i)) / 3;
+
+// 		//subtract 1 to have indeces
+// 		std::cout << n - 1 << ", ";
+// 	}
+	
+// }
+
 int	main(int argc, char* argv[]) {
 	PmergeMe	fordJohnson;
 
@@ -13,8 +26,9 @@ int	main(int argc, char* argv[]) {
 		return (EXIT_FAILURE);
 	}
 	
-	fordJohnson.vecPrint();
 	fordJohnson.vecPairwiseComparison();
-	fordJohnson.vecPrint();
+	fordJohnson.mergeSort();
+	fordJohnson.createChains();
+	fordJohnson.insertion();
 	return (EXIT_SUCCESS);
 }

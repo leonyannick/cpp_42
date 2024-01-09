@@ -19,7 +19,7 @@ public:
 	static void	convert(std::string literal);
 
 private:
-	static void	displayConversion(double d);
+	// static void	displayConversion(double d);
 	ScalarConverter(void);
 };
 

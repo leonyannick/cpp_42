@@ -5,7 +5,7 @@
  * and check wether the conversion would make sense before actually displaying the
  * casted number
 */
-void	ScalarConverter::displayConversion(double d) {
+static void	displayConversion(double d) {
 	char c = static_cast<char>(d);
 	int i = static_cast<int>(d);
 	float f = static_cast<float>(d);
@@ -62,5 +62,5 @@ void	ScalarConverter::convert(std::string literal) {
 			return ;
 		}
 	}
-	ScalarConverter::displayConversion(d);
+	displayConversion(d);
 }
