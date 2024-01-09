@@ -7,11 +7,11 @@
 	{
 	"name":"Launch",
 	"type":"cppdbg",
-	"program":"${workspaceFolder}/cpp08/ex01/span",
-	"args":[],
-	"cwd":"${workspaceFolder}/cpp08/ex01/",
+	"program":"${workspaceFolder}/cpp09/ex01/RPN",
+	"args":["8 9 * 9 - 9 - 9 - 4 - 1 +"],
+	"cwd":"${workspaceFolder}/cpp09/ex01/",
 	"request":"launch",
-	"MIMode":"gdb"
+	"MIMode":"lldb"
 	}
 	]
 }
