@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <utility>
 #include <cmath>
+#include <iomanip>
 
 #include "LogMsg.hpp"
 
@@ -34,6 +35,7 @@ public:
 	void	mergeSort();
 	void	createChains();
 	void	insertion();
+	void	displayRuntime() const;
 	
 	PmergeMe(const PmergeMe& copy);
 	PmergeMe& operator=(const PmergeMe& other);
@@ -46,6 +48,10 @@ private:
 	std::vector<std::pair<int, int> > _pairs;
 	std::vector<int>	_mainchain;
 	std::vector<int>	_pend;
+
+	clock_t		_startTimeVec;
+	clock_t		_endTimeVec;
+
 	std::size_t			_itSize;
 };
 

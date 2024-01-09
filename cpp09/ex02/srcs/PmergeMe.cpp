@@ -119,6 +119,8 @@ int	PmergeMe::vecFill(int argc, char *argv[]) {
 }
 
 void	PmergeMe::vecPairwiseComparison() {
+	_startTimeVec = clock();
+
 	for (size_t i = 0; i < (_vector.size() - 1); i += 2) {
 		if (_vector[i] < _vector[i + 1]) {
 			_pairs.push_back(std::make_pair(_vector[i + 1], _vector[i]));
@@ -220,6 +222,8 @@ void	PmergeMe::insertion() {
 		pos = binarySearch(_mainchain, _mainchain.size(), _stray);
 		_mainchain.insert(_mainchain.begin() + pos, _stray);
 	}
+
+	_endTimeVec = clock();
 	
 	if (LOG_DEBUG && isSorted(_mainchain)) {
 		LOG_MSG(LOG_DEBUG, BG_BOLD_GREEN, "sorting successfull");
@@ -228,6 +232,13 @@ void	PmergeMe::insertion() {
 	}
 	std::cout << "After:\t";
 	vecPrint(_mainchain);
+}
+
+void	PmergeMe::displayRuntime() const {
+	double elapsedTimeVec = static_cast<double>(_endTimeVec - _startTimeVec) / static_cast<double>(CLOCKS_PER_SEC);
+
+	std::cout << "Time to process a range of " << _mainchain.size()
+		<< " elements with std::vector : "  << elapsedTimeVec  << " us" << std::endl;
 }
 
 

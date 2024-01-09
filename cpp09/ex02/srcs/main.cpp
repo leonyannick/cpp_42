@@ -30,5 +30,6 @@ int	main(int argc, char* argv[]) {
 	fordJohnson.mergeSort();
 	fordJohnson.createChains();
 	fordJohnson.insertion();
+	fordJohnson.displayRuntime();
 	return (EXIT_SUCCESS);
 }
