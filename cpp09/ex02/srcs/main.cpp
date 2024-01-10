@@ -21,15 +21,13 @@ int	main(int argc, char* argv[]) {
 		return (EXIT_FAILURE);
 	}
 
-	if (fordJohnson.vecFill(argc, argv) == -1) {
+	if (fordJohnson.fillContainers(argc, argv) == -1) {
 		std::cout << "Error: filling vector failed" << std::endl;
 		return (EXIT_FAILURE);
 	}
 	
-	fordJohnson.vecPairwiseComparison();
-	fordJohnson.mergeSort();
-	fordJohnson.createChains();
-	fordJohnson.insertion();
+	fordJohnson.FJvec();
+	fordJohnson.FJdeq();
 	fordJohnson.displayRuntime();
 	return (EXIT_SUCCESS);
 }

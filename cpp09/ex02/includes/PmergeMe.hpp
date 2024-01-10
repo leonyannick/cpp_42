@@ -10,6 +10,7 @@
 #include <utility>
 #include <cmath>
 #include <iomanip>
+#include <deque>
 
 #include "LogMsg.hpp"
 
@@ -27,13 +28,13 @@ public:
 	// Constructors, Assignment, Destructors
 	PmergeMe(void);
 
-	int	vecFill(int argc, char *argv[]);
-	// void	vecPrintPair(std::vector<std::pair<int, int> > &vec) const;
-	// void	vecPrint(std::vector<int> &vec) const;
-	void	vecPairwiseComparison();
-	void	sortPairs(std::size_t itSize);
-	void	mergeSort();
-	void	createChains();
+	int	fillContainers(int argc, char *argv[]);
+
+
+	// void	sortPairs(std::size_t itSize);
+	void	FJvec();
+	void	FJdeq();
+
 	void	insertion();
 	void	displayRuntime() const;
 	
@@ -42,17 +43,36 @@ public:
 	~PmergeMe(void);
 
 private:
-	// Data
-	std::vector<int>	_vector;
+	// Vector
+	std::vector<int>					_vector;
+	std::vector<std::pair<int, int> >	_pairsVec;
+	std::vector<int>					_mainchainVec;
+	std::vector<int>					_pendVec;
+
+	// Deque
+	std::deque<int>						_deque;
+	std::deque<std::pair<int, int> >	_pairsDeq;
+	std::deque<int>						_mainchainDeq;
+	std::deque<int>						_pendDeq;
+
 	int					_stray;
-	std::vector<std::pair<int, int> > _pairs;
-	std::vector<int>	_mainchain;
-	std::vector<int>	_pend;
+
 
 	clock_t		_startTimeVec;
 	clock_t		_endTimeVec;
+	clock_t		_startTimeDeq;
+	clock_t		_endTimeDeq;
 
-	std::size_t			_itSize;
+	// Ford-Johnson utility
+	template <typename C, typename C_pair>
+	void	_PairwiseComparison(C& arr, C_pair& arr_pair);
+
+	template <typename C_pair, typename T, typename U>
+	void	_createChains(C_pair& arr_pair, T& mainchain, U& pend);
+
+	template <typename T, typename U>
+	void	_insertion(T& mainchain, U& pend);
+	// std::size_t			_itSize;
 };
 
 std::ostream &		operator<<(std::ostream & o, PmergeMe const & i);
