@@ -165,7 +165,8 @@ void	PmergeMe::_insertion(T& mainchain, U& pend) {
 	int		k;
 
 	//first element can be inserted in the mainchain without comparison
-	mainchain.insert(mainchain.begin(), pend[0]);
+	if (pend.size())
+		mainchain.insert(mainchain.begin(), pend[0]);
 
 	LOG_MSG(LOG_DEBUG, BG_BOLD_YELLOW, "inserting first pend:");
 	if (LOG_DEBUG)
@@ -199,7 +200,6 @@ void	PmergeMe::_insertion(T& mainchain, U& pend) {
 		mainchain.insert(mainchain.begin() + pos, _stray);
 	}
 }
-
 
 /*------------------PUBLIC METHODS -----------------*/
 
@@ -252,11 +252,17 @@ void	PmergeMe::FJdeq() {
 	} else {
 		LOG_MSG(LOG_DEBUG, BG_BOLD_RED, "sorting failed");
 	}
-	std::cout << "After:\t";
-	printContainer(_mainchainDeq);
 }
 
+void	PmergeMe::displayRuntime() const {
+	double elapsedTimeVec = static_cast<double>(_endTimeVec - _startTimeVec) / static_cast<double>(CLOCKS_PER_SEC);
+	double elapsedTimeDeq = static_cast<double>(_endTimeDeq - _startTimeDeq) / static_cast<double>(CLOCKS_PER_SEC);
 
+	std::cout << "Time to process a range of " << _mainchainVec.size()
+		<< " elements with std::vector : "  << elapsedTimeVec  << " us" << std::endl;
+	std::cout << "Time to process a range of " << _mainchainDeq.size()
+		<< " elements with std::deque : "  << elapsedTimeDeq  << " us" << std::endl;
+}
 
 // void	PmergeMe::sortPairs(std::size_t itSize) {
 
@@ -272,42 +278,45 @@ void	PmergeMe::FJdeq() {
 // 	sortPairs(++itSize);
 // }
 
-void	PmergeMe::displayRuntime() const {
-	double elapsedTimeVec = static_cast<double>(_endTimeVec - _startTimeVec) / static_cast<double>(CLOCKS_PER_SEC);
-	double elapsedTimeDeq = static_cast<double>(_endTimeDeq - _startTimeDeq) / static_cast<double>(CLOCKS_PER_SEC);
-
-	std::cout << "Time to process a range of " << _mainchainVec.size()
-		<< " elements with std::vector : "  << elapsedTimeVec  << " us" << std::endl;
-	std::cout << "Time to process a range of " << _mainchainDeq.size()
-		<< " elements with std::dequer : "  << elapsedTimeDeq  << " us" << std::endl;
-}
-
-
-
-/*----------------GETTERS AND SETTERS --------------*/
-
 /*-----------CONSTRUCTOR, ASSIGNEMENT, DESTRUCTOR------ */
 
-PmergeMe::PmergeMe(void) : _stray(-1)//, _itSize(1)
+/**
+ * stray initialized to -1 to check later whether there is a stray element
+*/
+PmergeMe::PmergeMe(void) : _stray(-1), _startTimeVec(0), _endTimeVec(0),
+	_startTimeDeq(0), _endTimeDeq(0)//, _itSize(1)
 {}
 
-// PmergeMe::PmergeMe(const PmergeMe& src)
-// {
-// //assign attributes
-// //or use definition from copy assignment operator
-// // *this = src;
-// }
+PmergeMe::PmergeMe(const PmergeMe& src)
+{
+//assign attributes
+//or use definition from copy assignment operator
+	*this = src;
+}
 
-// PmergeMe &PmergeMe::operator=(PmergeMe const &rhs)
-// {
-// 	if (this != &rhs)
-// 		{
-// 		//copying of member attributes here
-// 		}
-// 	return (*this);
-// }
+PmergeMe &PmergeMe::operator=(PmergeMe const &rhs)
+{
+	if (this != &rhs)
+	{
+		_stray = rhs._stray;
+		_startTimeVec = rhs._startTimeVec;
+		_startTimeDeq = rhs._startTimeDeq;
+		_endTimeDeq = rhs._endTimeDeq;
+		_endTimeVec = rhs._endTimeVec;
+		_vector = rhs._vector;
+		_pairsVec = rhs._pairsVec;
+		_mainchainVec = rhs._mainchainVec;
+		_pendVec = rhs._pendVec;
+		_deque = rhs._deque;
+		_pairsDeq = rhs._pairsDeq;
+		_mainchainDeq = rhs._mainchainDeq;
+		_pendDeq = rhs._pendDeq;
+	}
+	return (*this);
+}
 
-PmergeMe::~PmergeMe(void) {}
+PmergeMe::~PmergeMe(void) {
+}
 
 /*----------------OPERATOR OVERLOAD---------------*/
 

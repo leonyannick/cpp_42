@@ -29,14 +29,13 @@ public:
 	PmergeMe(void);
 
 	int	fillContainers(int argc, char *argv[]);
-
+	void	displayRuntime() const;
 
 	// void	sortPairs(std::size_t itSize);
 	void	FJvec();
 	void	FJdeq();
 
-	void	insertion();
-	void	displayRuntime() const;
+
 	
 	PmergeMe(const PmergeMe& copy);
 	PmergeMe& operator=(const PmergeMe& other);
@@ -57,7 +56,6 @@ private:
 
 	int					_stray;
 
-
 	clock_t		_startTimeVec;
 	clock_t		_endTimeVec;
 	clock_t		_startTimeDeq;
@@ -72,6 +70,7 @@ private:
 
 	template <typename T, typename U>
 	void	_insertion(T& mainchain, U& pend);
+
 	// std::size_t			_itSize;
 };
 
