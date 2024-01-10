@@ -196,7 +196,7 @@ void	PmergeMe::insertion() {
 		vecPrint(_mainchain);
 
 	k = jacobsthalIndeces[batch];
-	for (size_t nInsertions = 0; nInsertions < _pend.size(); nInsertions++) {
+	for (size_t nInsertions = 1; nInsertions < _pend.size();) {
 		if (k == 0 || k == jacobsthalIndeces[batch - 1]) {
 			batch++;
 			k = jacobsthalIndeces[batch];
@@ -213,7 +213,7 @@ void	PmergeMe::insertion() {
 			<< " pos:" << pos << " sequence after insertion:");
 		if (LOG_DEBUG)
 			vecPrint(_mainchain);
-	
+		nInsertions++;
 		k--;
 	}
 
