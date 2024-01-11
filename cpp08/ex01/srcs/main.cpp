@@ -10,11 +10,23 @@ void	print(const T & t) {
 }
 
 int	main(void) {
+	Span testMax(1);
+
+	try {
+		testMax.addNumber(3);
+		testMax.addNumber(4);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+	
+	
+
+
+
+
 	size_t	N = 20;
 	Span span1(N);
-
-	//generate random numbers
-	std::srand(std::time(NULL));
 
 	for (size_t i = 0; i < N; i++) {
 		if (i == 14)
@@ -40,7 +52,7 @@ int	main(void) {
 	std::vector<int> range;
 	range.push_back(3);
 	range.push_back(-10);
-	range.push_back(3);
+	range.push_back(4);
 	range.push_back(7);
 	range.push_back(0);
 	range.push_back(11);
@@ -49,7 +61,18 @@ int	main(void) {
 	try {
 		span4.addNumbers(range.begin(), range.end());
 	}
-	catch (Span::SpanFullException &e) {
+	catch (const std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+	span4.printNumbers();
+
+	Span span5(10);
+	try {
+		span5.addNumbers(range.begin(), range.end());
+		span5.printNumbers();
+		std::cout << span5.shortestSpan() << std::endl;
+	}
+	catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 

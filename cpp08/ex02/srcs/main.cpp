@@ -9,10 +9,10 @@ int main()
 	mstack.push(5);
 	mstack.push(17);
 
-	std::cout << mstack.top() << std::endl;
+	std::cout << "mstack top: " << mstack.top() << std::endl;
 	mstack.pop();
 
-	std::cout << mstack.size() << std::endl;
+	std::cout << "size: "<< mstack.size() << std::endl;
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737); //[...] mstack.push(0);
@@ -25,18 +25,17 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
-	std::cout << s.top() << std::endl;
+	std::cout << "s top: " << s.top() << std::endl;
 	s.pop();
-	std::cout << s.top() << std::endl;
-	std::cout << mstack.top() << std::endl;
+	std::cout << "s top: " << s.top() << std::endl;
+	std::cout << "mstack top: " << mstack.top() << std::endl;
 
 
-	MutantStack<int, std::list<int> > mstack2;
+	MutantStack<int> copy;
 
-	mstack2.push(2434);
-	std::cout << mstack2.top() << std::endl;
+	copy = mstack;
 
-
+	std::cout << "copy top: " << copy.top() << std::endl;
 
 	return 0;
 }

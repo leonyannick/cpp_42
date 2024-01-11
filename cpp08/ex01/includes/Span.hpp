@@ -10,17 +10,14 @@
 class Span
 {
 public:
-	class SpanFullException : std::exception
-	{
-		public:
-			const char *what() const throw() {return ("Span is full");};
-	};
 	// public methods
-	void	addNumber(int nb) throw (SpanFullException);
+	void	addNumber(int nb) throw (std::runtime_error);
 	void	addNumbers(std::vector<int>::const_iterator begin,
-		std::vector<int>::const_iterator end) throw (SpanFullException);
-	int		shortestSpan() const;
-	int		longestSpan() const;
+		std::vector<int>::const_iterator end) throw (std::runtime_error);
+	int		shortestSpan() const throw (std::runtime_error);
+	int		longestSpan() const throw (std::runtime_error);
+
+	void	printNumbers() const;
 
 	//Getters and Setters
 
@@ -37,7 +34,4 @@ private:
 	unsigned int _max;
 	std::vector<int> _numbers;
 };
-
-std::ostream &		operator<<(std::ostream & o, Span const & i);
-
 #endif

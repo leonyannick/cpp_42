@@ -4,7 +4,7 @@
 #include "easyfind.hpp"
 #include <algorithm>
 #include <list>
-
+#include <string>
 
 
 int	main(void) {
@@ -18,7 +18,8 @@ int	main(void) {
 	intList.push_back(17);
 
 	it = easyfind(intList, 21);
-	
+	if (it == intList.end())
+		std::cout << "it == intList.end()" << std::endl;
 	
 	it = easyfind(intList, 13);
 	std::cout << "element in list" << std::endl;
