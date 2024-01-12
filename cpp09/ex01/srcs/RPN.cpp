@@ -69,7 +69,10 @@ void	RPN::applyOperation(char op) {
 }
 
 void	RPN::printTop() const {
-	std::cout << _numbers.top() << std::endl;
+	if (_numbers.size() != 1)
+		std::cout << "Error: wrong stack size due to invalid operation" << std::endl;
+	else
+		std::cout << _numbers.top() << std::endl;
 }
 
 /*----------------GETTERS AND SETTERS --------------*/

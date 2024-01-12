@@ -8,7 +8,7 @@
 	"name":"Launch",
 	"type":"cppdbg",
 	"program":"${workspaceFolder}/cpp09/ex02/PmergeMe",
-	"args":["7", "8", "27", "100", "11", "46", "2", "53" ,"0"],
+	"args":["1"],
 	"cwd":"${workspaceFolder}/cpp09/ex02/",
 	"request":"launch",
 	"MIMode":"gdb"

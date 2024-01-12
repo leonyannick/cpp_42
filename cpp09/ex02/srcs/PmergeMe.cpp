@@ -255,8 +255,8 @@ void	PmergeMe::FJdeq() {
 }
 
 void	PmergeMe::displayRuntime() const {
-	double elapsedTimeVec = static_cast<double>(_endTimeVec - _startTimeVec) / static_cast<double>(CLOCKS_PER_SEC);
-	double elapsedTimeDeq = static_cast<double>(_endTimeDeq - _startTimeDeq) / static_cast<double>(CLOCKS_PER_SEC);
+	double elapsedTimeVec = static_cast<double>(_endTimeVec - _startTimeVec) / static_cast<double>(CLOCKS_PER_SEC * 1000000);
+	double elapsedTimeDeq = static_cast<double>(_endTimeDeq - _startTimeDeq) / static_cast<double>(CLOCKS_PER_SEC * 1000000);
 
 	std::cout << "Time to process a range of " << _mainchainVec.size()
 		<< " elements with std::vector : "  << elapsedTimeVec  << " us" << std::endl;

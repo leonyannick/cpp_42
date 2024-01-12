@@ -3,7 +3,7 @@
 /*------------------PUBLIC METHODS -----------------*/
 
 int	BitcoinExchange::loadDatabase(const std::string& filename) {
-	std::ifstream	inputFile(filename);
+	std::ifstream	inputFile(filename.c_str());
 	std::string		line;
 
 	if (!inputFile.is_open()) {
@@ -69,11 +69,11 @@ static bool isValidDateFormat(const std::string& dateStr) {
 }
 
 int	BitcoinExchange::calculateValue(const std::string& filename) {
-	std::ifstream	inputFile(filename);
+	std::ifstream	inputFile(filename.c_str());
 	std::string		line;
 
 	if (!inputFile.is_open()) {
-		std::cerr << "db open failed" << std::endl;
+		std::cerr << "input file opening failed" << std::endl;
 		return (-1);
 	}
 
@@ -90,7 +90,9 @@ int	BitcoinExchange::calculateValue(const std::string& filename) {
 			std::cerr << "db parse date failed" << std::endl;
 			continue;
 		}
-		date.pop_back();
+
+		if (date[date.length() - 1] == ' ') //remove whitespace
+			date.erase(date.end() - 1);
 
 		if (!isValidDateFormat(date)) {
 			std::cout << "Error: bad input => " << date << std::endl;
@@ -107,7 +109,7 @@ int	BitcoinExchange::calculateValue(const std::string& filename) {
 			continue;
 		} 
 
-		if (nbitcoins >= std::numeric_limits<int>::max()) {
+		if (nbitcoins >= 1000) {
 			std::cout << "Error: too large a number." << std::endl;
 			continue;
 		}
@@ -123,7 +125,7 @@ int	BitcoinExchange::calculateValue(const std::string& filename) {
 
 		if (it == _exchangeRates.begin() || it == _exchangeRates.end()) { //exact date found
 			std::cerr << "err: no lower bound (date lays probably in the past before bitcoins)" << std::endl;
-			return (-1);
+			continue;
 		}
 
 		it--;
