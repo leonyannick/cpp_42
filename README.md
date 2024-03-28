@@ -13,3 +13,4 @@ This repository contains the 42 introductory subjects to c++. Find a small descr
 |cpp06|c++ casts|[cpp04.pdf](https://github.com/leonyannick/cpp_42/blob/main/6/cpp06.pdf)|
 |cpp07|c++ templates|[cpp07.pdf](https://github.com/leonyannick/cpp_42/blob/main/cpp07/cpp07.pdf)|
 |cpp08|templated containers, iterators, algorithms|[cpp08.pdf](https://github.com/leonyannick/cpp_42/blob/main/cpp08/cpp08.pdf)|
+|cpp09|standard library|[cpp09.pdf](https://github.com/leonyannick/cpp_42/blob/main/cpp09/cpp09.pdf)|
